@@ -30,16 +30,18 @@ int main(){
 int getsline(char s[], int MAXLINE){
   int c; 
   int i;
+  int array_position = 0;
   for (i=0; (c = getchar()) != EOF; ++i){
     if (i < MAXLINE){
       s[i] = c; 
+      ++array_position;
     }
     if (c == '\n'){
       ++i;
       break;
     }
   }
-  s[i] = '\0';
+  s[array_position] = '\0';
   return i;
 }
 
