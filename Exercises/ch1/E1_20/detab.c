@@ -1,28 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
+int main(int argc, char **argv) {
   char c;
-  int maxline = 100;
-  char line[maxline];
-  int tabstop = 3;
-  int i;
-  while (c != EOF) {
-    i=0;
-    while (i < maxline - 1 && (c = getchar()) != EOF && c != '\n') {
-      if (c == '\t') {
-        line[i++] = ' ';
-        while (i % tabstop) {
-          line[i++] = ' ';
-        }
-      } else {
-        line[i++] = c;
+  int tabstop = 2;
+  if (argc == 2){
+    tabstop = atoi(argv[1]);
+  }
+  int i=0;
+  while ((c = getchar()) != EOF) {
+    if (c == '\t') {
+      putchar(' ');
+      ++i;
+      while (i % tabstop) {
+        putchar(' ');
+        ++i;
       }
+    } else {
+      putchar(c);
+      ++i;
     }
-    if (c=='\n'){
-      line[i++] = c;
+    if (c == '\n'){
+      i=0;
     }
-    line[i] = '\0';
-    printf("%s", line);
   }
 }
-
