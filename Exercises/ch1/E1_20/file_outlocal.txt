@@ -4,26 +4,26 @@
 
 int main(void)
 {
-  int c;
-  unsigned int nr_of_spaces;
+   int c;
+   unsigned int nr_of_spaces;
 
-  while ((c = getchar()) != EOF)
-  {
-    if (c == '\t')
-    {
-      nr_of_spaces = TAB_LENGTH;
-
-      while (nr_of_spaces)
+   while ((c = getchar()) != EOF)
+   {
+      if (c == '\t')
       {
-        putchar(' ');
-        --nr_of_spaces;
-      }
-    }
-    else
-    {
-      putchar(c);
-    }
-  }
+         nr_of_spaces = TAB_LENGTH;
 
-  return 0;
+         while (nr_of_spaces)
+         {
+            putchar(' ');
+            --nr_of_spaces;
+         }
+      }
+      else
+      {
+         putchar(c);
+      }
+   }
+
+   return 0;
 }
