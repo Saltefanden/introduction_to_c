@@ -18,6 +18,10 @@ int main() {
   char s6[MAXLEN];
   expand(s5, s6);
   printf("%s\nExpands to:\n%s\n", s5, s6);
+  char s7[] = "Her kommer a-c-b-f større problemer a-C";
+  char s8[MAXLEN];
+  expand(s7, s8);
+  printf("%s\nExpands to:\n%s\n", s7, s8);
 
 }
 
